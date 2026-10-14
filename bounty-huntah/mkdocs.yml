@@ -2,24 +2,20 @@ site_name: Bounty Huntah Documentations
 copyright: > 
   Copyright &copy; 2026 GameDevRats.
   <a href="#__consent" style="margin-left: 16px">Change cookie settings</a>
+site_url: https://GameDevRats.github.io/Documentations/bounty-huntah/
   
-  plugins:
+plugins:
   - search
   - privacy
   - offline
   - social:
-     enabled: !ENV [CI, false]
-site_url: https://GameDevRats.github.io/Documentations/bounty-huntah/
+      enabled: !ENV [CI, false]
 
 markdown_extensions:
   - attr_list
   - md_in_html
   - def_list
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
@@ -27,23 +23,24 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.tilde
   - pymdownx.snippets
-  - admonition
   - pymdownx.details
+  - pymdownx.inlinehilite
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - footnotes
-  - toc:
-      permalink: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra:
   generator: false
@@ -127,3 +124,16 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
+
+nav:
+  - Home: index.md
+  - How To:
+      - Injections:
+          - Scene Component: how-to/injections/SceneComponenrs.md
+          - Global Services: how-to/injections/GlobalServices.md
+      - Player Controller:
+          - Create Player Modules: how-to/player-controller/PlayerModule.md
+  - Class, Functions and Utils:
+      - API:
+          - Assets Management:
+              - IAssetManagerService: class-func-utils/api/assets-manager/IAssetManagerService.md
