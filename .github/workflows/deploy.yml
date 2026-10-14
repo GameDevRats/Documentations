@@ -7,7 +7,6 @@ on:
       - main
     paths:
       - ".github/workflows/deploy.yml"
-      - "portal/**"
       - "bounty-huntah/**"
   workflow_dispatch:
 
@@ -46,7 +45,6 @@ jobs:
 
           # Format: directory:output-path
           projects=(
-            "portal:."
             "bounty-huntah:bounty-huntah"
           )
 
