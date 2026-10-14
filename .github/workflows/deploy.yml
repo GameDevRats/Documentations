@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - ".github/workflows/deploy.yml"
+      - "portal/**"
       - "bounty-huntah/**"
   workflow_dispatch:
 
